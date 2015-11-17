@@ -39,7 +39,7 @@ $con = mysqli_connect('localhost','root','','bd_recursos');
 			$admin= "SELECT * FROM tbl_usuario WHERE id_usuario=$_SESSION[login_user]";
 			$user = mysqli_query($con, $admin);
 			$proU = mysqli_fetch_array($user);
-			if ($proU['tipo_usuario']=="Administrador"){
+			if ($proU['id_tipo_usuario']=="1" || $proU['id_tipo_usuario']=="3"){
 				?>
 			<section class="type1">
 				<p><a href="#usuarios">Administrar Usuarios</a></p>

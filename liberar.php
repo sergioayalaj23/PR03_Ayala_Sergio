@@ -14,12 +14,13 @@
 		<?php
 			$con = mysqli_connect('localhost','root','','bd_recursos');
 			$sql = "UPDATE tbl_recurso SET estado='disponible' WHERE id_recurso=$_REQUEST[id]";
-			$sql1 = "UPDATE tbl_reserva SET id_usuario=NULL, ultima_liberacion=now() WHERE id_recurso=$_REQUEST[id]";
+			$sql1 = "UPDATE tbl_reserva SET ultima_liberacion=now() WHERE id_recurso=$_REQUEST[id]";
 			
 			$datos = mysqli_query($con,$sql);
 			$datos1 = mysqli_query($con,$sql1);
 			
 		?>
+			<p>Su recurso se ha liberado correctamente. Muchas gracias</p>
 			<p><a href="perfil.php">Volver al Perfil</a></p>
 	</div>
 </body>

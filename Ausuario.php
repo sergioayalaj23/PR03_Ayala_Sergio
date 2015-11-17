@@ -16,6 +16,7 @@
 		<meta charset="utf-8"/>
 		<title>¡Reserva tu recurso!</title>
 		<link rel="stylesheet" type="text/css" href="css/style3.css" media="screen" />
+		<script type="text/javascript" src="script/validar.js"></script>
 	</head>
 <body>
 	<nav>
@@ -24,18 +25,31 @@
 		?>
 	</nav>
 	<div id="formulario">
-		<form name="usuario" action="Ausuario.proc.php" method="POST">
-			<input type="text" name="usuario" size="10" maxlength="15" placeholder="Nombre usuario" required>
+		<form name="usuario" action="Ausuario.proc.php" method="POST" onSubmit="return avisarUsuario();">
+			<input type="text" name="usuario" size="12" maxlength="15" placeholder="Nombre usuario" >
 			<br/><br/>
-			<input type="password" name="pass" size="10" maxlength="20" placeholder="Password" required>
+			<input type="password" name="pass" size="10" maxlength="20" placeholder="Password" >
+			<br/><br/>
+			<input type="password" name="repetirPass" size="22" maxlength="20" placeholder="Vuelve a escribir el Password" >
 			<br/><br/>
 			<select name="tipo_usuario">
-							<option value="" disabled>Selecciona un recurso...</option>
-							<option value="Usuario" >Usuario</option>
-							<option value="Administrador" >Administrador</option>
+							<option value="">Selecciona un recurso...</option>
+							<?php
+								include('login.php');
+								$sql = mysqli_query($con, "SELECT * FROM tbl_tipo_usuario");
+								while($dato=mysqli_fetch_array($sql)) {
+									if($dato['tipo_usuario']=="Root"){
+
+									}else{
+								echo "<option value=\"$dato[id_tipo_usuario]\">$dato[tipo_usuario]</option>";
+								}}
+								mysqli_close($con);
+								?>
 						</select>
 			<br/><br/>
-			<input type="submit" value="Enviar">
+			<input type="submit" value="Enviar" id="boton">
+		
+			<a href="perfil.php" id="boton">Volver</a>
 			</form>
 	</div>
 </body>
