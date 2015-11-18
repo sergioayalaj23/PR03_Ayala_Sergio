@@ -28,9 +28,11 @@
 		<?php
 
 			$sql = "SELECT * FROM tbl_usuario INNER JOIN tbl_tipo_usuario ON tbl_tipo_usuario.id_tipo_usuario=tbl_usuario.id_tipo_usuario";
+			$sql1= "SELECT * FROM tbl_usuario WHERE id_usuario=$_SESSION[login_user]";
 
 			$datos = mysqli_query($con, $sql);
-
+			$datos1 = mysqli_query($con, $sql1);
+			$usu = mysqli_fetch_array($datos1);
 			?>
 			<table border>
 				<tr>
@@ -43,10 +45,7 @@
 
 				
 				while ($prod = mysqli_fetch_array($datos)){
-					if ($prod['tipo_usuario']=="Root"){
-
-					}else{
-
+					if ($usu['id_tipo_usuario']=="1"){
 					echo "<td>";
 
 					echo "$prod[usuario]";
@@ -54,19 +53,62 @@
 					echo "$prod[tipo_usuario]";
 					 echo"</td><td>";
 					
-					//enlace a la página que modifica el producto pasándole la id (clave primaria)
+					
 					
 						echo "<a href='MDusuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
 					
 
-					//enlace a la página que elimina el producto pasándole la id (clave primaria)
+					
 					
 						echo "<a href='eliminar.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
 					
 
 					
 					echo "</td></tr>";
-				}}
+
+					}else if ($usu['id_tipo_usuario']=="3"){
+						if ($prod['tipo_usuario']=="Root"){
+
+						}else if ($prod['tipo_usuario']=="Usuario"){
+							echo "<td>";
+
+							echo "$prod[usuario]";
+							echo "</td><td>";  
+							echo "$prod[tipo_usuario]";
+					 		echo"</td><td>";
+					
+				
+						echo "<a href='MDusuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+					
+
+					
+					
+						echo "<a href='eliminar.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
+				
+					echo "</td></tr>";
+						}else if ($prod['tipo_usuario']=="Administrador"){
+							if ($prod['usuario']==$usu['usuario']){
+								echo "<td>";
+
+							echo "$prod[usuario]";
+							echo "</td><td>";  
+							echo "$prod[tipo_usuario]";
+					 		echo"</td><td>";
+					
+				
+						echo "<a href='MDusuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+					
+
+					
+					
+						echo "<a href='eliminar.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
+				
+					echo "</td></tr>";
+							}
+						}
+					
+				}
+			}
 
 				?>
 
