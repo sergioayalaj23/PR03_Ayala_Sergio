@@ -55,12 +55,12 @@
 					
 					
 					
-						echo "<a href='MDusuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+						echo "<a href='Musuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
 					
 
 					
 					
-						echo "<a href='eliminar.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
+						echo "<a href='Dusuario.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
 					
 
 					
@@ -78,12 +78,12 @@
 					 		echo"</td><td>";
 					
 				
-						echo "<a href='MDusuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+						echo "<a href='Musuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
 					
 
 					
 					
-						echo "<a href='eliminar.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
+						echo "<a href='Dusuario.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
 				
 					echo "</td></tr>";
 						}else if ($prod['tipo_usuario']=="Administrador"){
@@ -96,12 +96,12 @@
 					 		echo"</td><td>";
 					
 				
-						echo "<a href='MDusuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+						echo "<a href='Musuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
 					
 
 					
 					
-						echo "<a href='eliminar.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
+						echo "<a href='Dusuario.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
 				
 					echo "</td></tr>";
 							}

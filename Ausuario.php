@@ -38,7 +38,7 @@
 			<input type="password" name="repetirPass" size="22" maxlength="20" placeholder="Vuelve a escribir el Password" >
 			<br/><br/>
 			<select name="tipo_usuario">
-							<option value="">Selecciona un recurso...</option>
+							<option value="">Selecciona el tipo de usuario...</option>
 							<?php
 								include('login.php');
 								$sql = mysqli_query($con, "SELECT * FROM tbl_tipo_usuario");

@@ -30,7 +30,7 @@ if(document.usuario.usuario.value==""){
 
 
 		}
-			
+
 
 
 

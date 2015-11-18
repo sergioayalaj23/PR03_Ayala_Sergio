@@ -59,8 +59,7 @@ $con = mysqli_connect('localhost','root','','bd_recursos');
 		                </br>
 						<p>
 						<a href="Ausuario.php" id="boton">Ingresar nuevo usuario</a>
-						<a href="Musuario.php" id="boton">Modificar usuario</a>
-						<a href="Dusuario.php" id="boton">Eliminar usuario</a>
+						<a href="MDusuario.php" id="boton">Modificar/Eliminar usuario</a>
 						</p>
 
 				</form>
