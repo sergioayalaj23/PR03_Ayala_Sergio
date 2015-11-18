@@ -47,6 +47,19 @@ $con = mysqli_connect('localhost','root','','bd_recursos');
 			<?php
 				}
 				?>
+
+				<?php
+			$admin= "SELECT * FROM tbl_usuario WHERE id_usuario=$_SESSION[login_user]";
+			$user = mysqli_query($con, $admin);
+			$proU = mysqli_fetch_array($user);
+			if ($proU['id_tipo_usuario']=="1" || $proU['id_tipo_usuario']=="3"){
+				?>
+			<section class="type1">
+				<p><a href="historialReservas.php">Ver historial</a></p>
+			</section>
+			<?php
+				}
+				?>
             
 		</div>
 
