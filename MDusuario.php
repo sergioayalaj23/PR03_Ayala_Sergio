@@ -107,6 +107,8 @@
 							}
 						}
 					
+				}else{
+					header("location:perfil.php");
 				}
 			}
 

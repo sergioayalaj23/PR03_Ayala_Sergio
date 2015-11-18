@@ -1,4 +1,3 @@
-
 <?php  
 	include('sesion.php');
 	$con = mysqli_connect('localhost', 'root', '', 'bd_recursos');
@@ -28,6 +27,9 @@
 	</nav>
 	<div id="formulario">
 			<?php
+			if (!isset($_REQUEST['usuario'])){
+				header("location:perfil.php");
+			}else{
 			$con = mysqli_connect('localhost', 'root', '', 'bd_recursos');
 			$sql = "INSERT INTO tbl_usuario (usuario, password, id_tipo_usuario) VALUES ('$_REQUEST[usuario]', '$_REQUEST[pass]', '$_REQUEST[tipo_usuario]')";
 
@@ -43,7 +45,7 @@
 					
 					$datos = mysqli_query($con, $sql);
 					echo "Usuario creado exitosamente!";
-				}
+				}}
 		?>
 		</br></br>
 				<p><a href="perfil.php" id="boton">Volver</a></p>

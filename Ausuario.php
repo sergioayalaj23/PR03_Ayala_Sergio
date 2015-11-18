@@ -24,6 +24,11 @@
 			echo "Perfil de: ".$nombre_usuario." <a href='logout.php'>| Log Out</a>";
 		?>
 	</nav>
+	<?php
+		if ($pro0['id_tipo_usuario']==2){
+			header("location:perfil.php");
+		}else{
+			?>
 	<div id="formulario">
 		<form name="usuario" action="Ausuario.proc.php" method="POST" onSubmit="return avisarUsuario();">
 			<input type="text" name="usuario" size="12" maxlength="15" placeholder="Nombre usuario" >
@@ -52,5 +57,8 @@
 			<a href="perfil.php" id="boton">Volver</a>
 			</form>
 	</div>
+	<?php
+}
+?>
 </body>
 </html>
