@@ -35,7 +35,7 @@
 				$prod=mysqli_fetch_array($datos);
 				?>
 			<div id="formulario">
-				<form name="usuario" action="modificar.proc.php" method="POST" onSubmit="return avisarUsuario();">
+				<form name="usuario" action="Musuario.proc.php" method="POST" onSubmit="return avisarUsuario();">
 				<input type="hidden" name="id" value="<?php echo $prod['id_usuario']; ?>">
 				<b>Nombre Usuario:</b></br></br>
 				<input type="text" name="usuario" size="20" maxlength="25" value="<?php echo $prod['usuario']; ?>"></br></br>
@@ -55,7 +55,7 @@
 						if ($tipo['tipo_usuario']=="Root"){
 
 						}else{
-						echo "<option value='$tipo[tipo_usuario]'";
+						echo "<option value='$tipo[id_tipo_usuario]'";
 
 						if($tipo['id_tipo_usuario']==$prod['id_tipo_usuario']){
 							
@@ -66,7 +66,8 @@
 
 				?>
 				</select><br/><br/>
-				<input type="submit" value="Guardar">
+				<input type="submit" id="boton" value="Guardar">
+				<a href="perfil.php" id="boton">Volver</a>
 				</form>
 				<?php
 			} else {
@@ -76,6 +77,7 @@
 			mysqli_close($con);
 		}
 		?>
+
 		
 	</div>
 	</body>
