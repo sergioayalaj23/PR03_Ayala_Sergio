@@ -46,6 +46,7 @@
 				
 				while ($prod = mysqli_fetch_array($datos)){
 					if ($usu['id_tipo_usuario']=="1"){
+						if ($prod['tipo_usuario']=="Root"){
 					echo "<td>";
 
 					echo "$prod[usuario]";
@@ -55,16 +56,40 @@
 					
 					
 					
-						echo "<a href='Musuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+						echo "<a href='Musuario.php?id=$prod[id_usuario]'><i style='background-color:white;' class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
 					
 
 					
 					
-						echo "<a href='Dusuario.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
+						
 					
 
 					
 					echo "</td></tr>";
+
+				}else{
+
+					echo "<td>";
+
+					echo "$prod[usuario]";
+					echo "</td><td>";  
+					echo "$prod[tipo_usuario]";
+					 echo"</td><td>";
+					
+					
+					
+						echo "<a href='Musuario.php?id=$prod[id_usuario]'><i style='background-color:white;' class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+					
+
+					
+					
+						echo "<a href='Dusuario.php?id=$prod[id_usuario]'>";?><i style='background-color:white;' class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
+					
+
+					
+					echo "</td></tr>";
+
+				}
 
 					}else if ($usu['id_tipo_usuario']=="3"){
 						if ($prod['tipo_usuario']=="Root"){
@@ -78,12 +103,12 @@
 					 		echo"</td><td>";
 					
 				
-						echo "<a href='Musuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+						echo "<a href='Musuario.php?id=$prod[id_usuario]'><i style='background-color:white;' class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
 					
 
 					
 					
-						echo "<a href='Dusuario.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
+						echo "<a href='Dusuario.php?id=$prod[id_usuario]'>";?><i style='background-color:white;' class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
 				
 					echo "</td></tr>";
 						}else if ($prod['tipo_usuario']=="Administrador"){
@@ -96,12 +121,12 @@
 					 		echo"</td><td>";
 					
 				
-						echo "<a href='Musuario.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+						echo "<a href='Musuario.php?id=$prod[id_usuario]'><i style='background-color:white;' class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
 					
 
 					
 					
-						echo "<a href='Dusuario.php?id=$prod[id_usuario]'>";?><i class='fa fa-trash fa-2x fa-pull-left fa-border' title='borrar' onclick="return confirm('¿Seguro que deseas eliminar el usuario?');"><?php "</i></a>";
+						
 				
 					echo "</td></tr>";
 							}
